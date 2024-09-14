@@ -1,14 +1,16 @@
 # 利用Avahi库实现基于mDNS协议的服务发现机制
 
-# 1 mDNS简介
+## 一、mDNS简介
 mDNS（Multicast DNS，多播 DNS）是一个协议，允许在无中央 DNS 服务器的局域网中通过多播 DNS 查询来实现设备的自动服务发现和主机名解析。它是Zeroconf（零配置网络）的一部分，主要用于在局域网中实现无需手动配置的自动网络发现功能
-2 项目简介
+## 二、项目简介
 利用两台虚拟机模拟两台局域网设备，第一台模拟器主机名study03运行服务端，第二台模拟器主机名study02运行客户端。客户端输出服务端主机名、IPv4、IPv6地址、服务器名称（MQTTServer）、类型（_mqtt._tcp）、地址（mqtts://tb.com）
-3 配置环境
+## 三、配置环境
 如果两台虚拟机上运行需要配置环境，如果在一台虚拟机上两个终端运行则不需要此步骤。
 ①确保虚拟机在同一局域网
 命令查看IP地址，根据IP地址可以确定两台虚拟机是否在同一个子网
+··· shell
 Ifconfig
+```
 192.168.118.130
 192.168.118.129
 根据IP地址确定两台虚拟机是否在同一个子网
@@ -22,15 +24,15 @@ sudo ufw status
 sudo ufw allow 5353/udp
 也可以直接关闭防火墙
 sudo ufw disable
-4 安装依赖
+## 四、安装依赖
 sudo apt-get update
 sudo apt-get install avahi-daemon libavahi-client-dev libavahi-common-dev
 三个包作用？
-5 编译
+## 五、编译
 进入程序文件路径，编译程序
 gcc -o server.out server.c -lavahi-client -lavahi-common
 gcc -o client.out client.c -lavahi-client -lavahi-common
-6 开启守护进程
+## 六、开启守护进程
 avahi-daemon包是Avahi 服务的核心守护进程，它在网络上提供多种服务，包括服务发现、名称解析和服务注册。Avahi 是一个开源的实现了Zeroconf（零配置网络）标准的服务，主要用于在本地网络中自动发现服务和设备。
 
 命令开启守护进程并检查状态（是否开启）
@@ -39,12 +41,12 @@ sudo systemctl status avahi-daemon
 停止/重启/开机自启/关闭开机自启 服务
 sudo systemctl stop/restart/enable/disable avahi-daemon
 
-6 运行
+## 七、运行
 分别运行服务端和客户端
 ./server.out
 ./client.out
 
-7 报错
+## 七、报错
 如果遇到报错，请检查头文件是否完整等等
 
 检查服务命令
