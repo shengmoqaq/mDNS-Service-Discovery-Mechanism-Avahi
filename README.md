@@ -9,7 +9,7 @@ mDNS（Multicast DNS，多播 DNS）是一个协议，允许在无中央 DNS 服
 ①确保虚拟机在同一局域网
 命令查看IP地址，根据IP地址可以确定两台虚拟机是否在同一个子网
 
-··· shell
+``` shell
 Ifconfig
 ```
 
