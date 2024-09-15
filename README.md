@@ -87,5 +87,5 @@ avahi-browse -a
 ```
 
 * 常见问题
-报错(error)：Local name collision
+1. 报错(error)：Local name collision
 客户端多次打印
