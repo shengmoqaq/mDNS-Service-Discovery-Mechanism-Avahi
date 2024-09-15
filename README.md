@@ -80,7 +80,7 @@ sudo systemctl stop/restart/enable/disable avahi-daemon
 
 检查服务命令
 
-```
+```shell
 avahi-browse -r _http._tcp
 avahi-browse -a
 ```
