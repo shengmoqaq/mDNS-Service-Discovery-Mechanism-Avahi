@@ -83,6 +83,10 @@ sudo systemctl stop/restart/enable/disable avahi-daemon
 
 ![image](https://github.com/user-attachments/assets/65f3b395-9188-4cc8-a786-985b9fc3bb67)
 
+* 客户端
+
+![image](https://github.com/user-attachments/assets/562d23de-ac12-4d76-88ac-6b19a95f249e)
+
 
 ## 七、报错
 * 如果遇到报错，请检查头文件是否完整等等
