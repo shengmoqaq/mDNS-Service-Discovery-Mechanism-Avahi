@@ -74,7 +74,10 @@ sudo systemctl status avahi-daemon
 * 其它常用的avahi-daemon命令
 
 1. 停止/重启/开机自启/关闭开机自启 服务
+
+```shell
 sudo systemctl stop/restart/enable/disable avahi-daemon
+```
 
 ## 七、运行
 * 分别运行服务端和客户端
@@ -105,5 +108,4 @@ avahi-browse -a
 
 * 常见问题
 
-1. 报错(error)：Local name collision
-客户端多次打印
+1. 报错(error)：Local name collision、客户端多次打印输出信息
