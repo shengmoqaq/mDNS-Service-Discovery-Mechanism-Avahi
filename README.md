@@ -19,7 +19,8 @@ Ifconfig
 2. 确认虚拟机的网络模式
 * 两台虚拟机均为NAT模式可以通信
 
-Picture/picture1.png
+![image](https://github.com/user-attachments/assets/b5e61496-b8b6-4910-ab16-2a930e943948)
+
 
 3. 确保防火墙没有阻止 UDP 5353端口
 * 检查防火墙状态
