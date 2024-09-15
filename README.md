@@ -17,25 +17,27 @@ Ifconfig
 2. 两台虚拟机分别让其IP地址与子网掩码相遇如果结果相等则在同一个子网内
 
 * 确认虚拟机的网络模式
-  * 两台虚拟机均为NAT模式可以通信
+
+1. 两台虚拟机均为NAT模式可以通信
 
 ![image](https://github.com/user-attachments/assets/b5e61496-b8b6-4910-ab16-2a930e943948)
 
 
 * 确保防火墙没有阻止 UDP 5353端口
-  * 检查防火墙状态
+
+1. 检查防火墙状态
 
 ```shell
 sudo ufw status
 ```
 
-  * 设置允许5353端口
+2. 设置允许5353端口
 
 ```shell
 sudo ufw allow 5353/udp
 ```
 
-  * 或者直接关闭防火墙
+3. 或者直接关闭防火墙
 
 ```shell
 sudo ufw disable
@@ -48,7 +50,9 @@ sudo apt-get update
 sudo apt-get install avahi-daemon libavahi-client-dev libavahi-common-dev
 ```
 
-* avahi-daemon包用于开启守护进程，libavahi-client-dev包用于提供头文件、解析mDNS发现的服务等，libavahi-common-dev包用于内存管理、线程控制等。
+* avahi-daemon包用于开启守护进程
+* libavahi-client-dev包用于提供头文件、解析mDNS发现的服务等
+* libavahi-common-dev包用于内存管理、线程控制等
 
 ## 五、编译
 * 进入程序文件路径，编译程序
@@ -68,7 +72,8 @@ sudo systemctl start avahi-daemon
 sudo systemctl status avahi-daemon
 ```
 * 其它常用的avahi-daemon命令
- * 停止/重启/开机自启/关闭开机自启 服务
+
+1. 停止/重启/开机自启/关闭开机自启 服务
 sudo systemctl stop/restart/enable/disable avahi-daemon
 
 ## 七、运行
@@ -99,5 +104,6 @@ avahi-browse -a
 ```
 
 * 常见问题
+
 1. 报错(error)：Local name collision
 客户端多次打印
