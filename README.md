@@ -14,28 +14,28 @@ mDNS（Multicast DNS，多播 DNS）是一个协议，允许在无中央 DNS 服
 Ifconfig
 ```
 
-2 两台虚拟机分别让其IP地址与子网掩码相遇如果结果相等则在同一个子网内
+2. 两台虚拟机分别让其IP地址与子网掩码相遇如果结果相等则在同一个子网内
 
-2. 确认虚拟机的网络模式
-* 两台虚拟机均为NAT模式可以通信
+* 确认虚拟机的网络模式
+  * 两台虚拟机均为NAT模式可以通信
 
 ![image](https://github.com/user-attachments/assets/b5e61496-b8b6-4910-ab16-2a930e943948)
 
 
-3. 确保防火墙没有阻止 UDP 5353端口
-* 检查防火墙状态
+* 确保防火墙没有阻止 UDP 5353端口
+  * 检查防火墙状态
 
 ```shell
 sudo ufw status
 ```
 
-* 设置允许5353端口
+  * 设置允许5353端口
 
 ```shell
 sudo ufw allow 5353/udp
 ```
 
-* 或者直接关闭防火墙
+  * 或者直接关闭防火墙
 
 ```shell
 sudo ufw disable
