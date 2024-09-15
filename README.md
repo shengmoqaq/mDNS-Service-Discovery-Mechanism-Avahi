@@ -13,8 +13,8 @@ mDNS（Multicast DNS，多播 DNS）是一个协议，允许在无中央 DNS 服
 Ifconfig
 ```
 
-192.168.118.130
-192.168.118.129
+192.179.124.134
+192.179.124.129
 根据IP地址确定两台虚拟机是否在同一个子网
 2.确认虚拟机的网络模式
 
@@ -69,16 +69,22 @@ sudo systemctl stop/restart/enable/disable avahi-daemon
 
 ## 七、运行
 分别运行服务端和客户端
+
+```shell
 ./server.out
 ./client.out
+```
 
 ## 七、报错
 如果遇到报错，请检查头文件是否完整等等
 
 检查服务命令
+
+```
 avahi-browse -r _http._tcp
 avahi-browse -a
+```
 
 常见问题
-报错：Local name collision
+报错(error)：Local name collision
 客户端多次打印
